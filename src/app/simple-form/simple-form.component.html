@@ -1,0 +1,33 @@
+<form>
+  <div class="form-set">
+    <label>貸款總額</label>
+    <div class="amount">
+      <input
+        placeholder="請輸入貸款總額"
+        [(ngModel)]="amountVal"
+        name="amount"
+        (input)="valuechange($event)"
+      />
+      <span>萬元</span>
+    </div>
+  </div>
+  <div class="form-set">
+    <label>貸款期限</label>
+    <select [(ngModel)]="termsVal.terms" name="terms">
+      <option *ngFor="let t of termOptions" [ngValue]="t.terms">
+        {{ t.name }}
+      </option>
+    </select>
+  </div>
+  <div class="form-set">
+    <label>年利率</label>
+    <select [(ngModel)]="interestRateVal.rate" name="rate">
+      <option *ngFor="let i of interestRates" [ngValue]="i.rate">
+        {{ i.name }}
+      </option>
+    </select>
+  </div>
+  <div class="btn-group">
+    <div class="btn" (click)="btnClick()">開始計算</div>
+  </div>
+</form>

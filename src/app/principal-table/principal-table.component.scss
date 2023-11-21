@@ -1,0 +1,37 @@
+.table {
+  width: 756px;
+  margin-left: 30px;
+
+  & > .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    color: #eee;
+    background: #777;
+    padding: 0 10px;
+  }
+
+  & > .table-content > .item > *,
+  & > .header > * {
+    flex: 1;
+  }
+
+  & > .table-content {
+    height: 440px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    & > .item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background-color: #fff;
+
+      &:hover {
+        color: #fff;
+        background: #777;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="table">
+  <div class="header">
+    <div>月份</div>
+    <div>每月應還本金金額(元)</div>
+    <div>每月應付利息金額(元)</div>
+    <div>每月應付本息金額(元)</div>
+  </div>
+  <div class="table-content">
+    <div class="item" *ngFor="let p of principalList">
+      <div>{{ p.month }}</div>
+      <div>$ {{ p.principal.toFixed(0) }}</div>
+      <div>$ {{ p.interest.toFixed(0) }}</div>
+      <div>$ {{ p.totalPayment.toFixed(0) }}</div>
+    </div>
+    <div class="item" *ngIf="principalList.length === 0">
+      <div>點擊"開始計算"</div>
+    </div>
+  </div>
+</div>
